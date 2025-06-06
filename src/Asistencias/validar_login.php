@@ -1,6 +1,5 @@
 <?php
-// src/Asistencias/validar_login.php
-require_once __DIR__ . '/../src/Asistencias/Conexion.php';
+require_once APP_PATH . '/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = $_POST['usuario'] ?? '';
@@ -13,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user) {
         session_start();
         $_SESSION['usuario'] = $usuario;
-        header('Location: ../../public/index.php');
+        header('Location: ' . APP_PATH . 'home.php');
         exit();
     } else {
         echo '<script>alert("Usuario o contraseña incorrectos");</script>';

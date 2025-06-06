@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../bootstrap.php';
+validar_sesion('home');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +12,7 @@
 </head>
 <body>
     <div class="login-container">
-        <form action="<?= __DIR__ . '/../src/Asistencias/validar_login.php';?>" method="POST">
+        <form action="<?= APP_PATH . 'validar_login.php';?>" method="POST">
             <h2>Iniciar Sesión</h2>
             <div class="input-group">
                 <label for="usuario">Usuario</label>
